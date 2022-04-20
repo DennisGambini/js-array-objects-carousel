@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+#container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    display: flex;
+}
+#big-pic{
+    width: 70vw;
+    height: 70vh;
+    border: 1px solid black;
+    position: relative;
+}
+#small-pic{
+    height: 70vh;
+    width: 15vw;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+}
+.big-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0%);
+    opacity: 0;
+}
+.animato{
+    animation: big-pic 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes big-pic {
+    from{
+        /* height: 10px;
+        width: 10px; */
+        filter: sepia(100%);
+        opacity: 0;
+    }
+    to{
+        /* height: 100px;
+        width: 100px; */
+        filter: sepia(0%);
+        opacity: 1;
+    }
+}
+#big-pic img.active{
+    display: block;
+}
+
+.sm-img{
+    width: 100%;
+    height: calc(70vh / 5);
+    object-fit: cover;
+}
+.sm-img-box{
+    width: 100%;
+    height: calc(70vh / 5);
+    position: relative;
+}
+.layover{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#description{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.icon-box{
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: lightgray;
+    border-radius: 50%;
+    font-size: 1.7em;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.icon-box:hover{
+    background-color: gray;
+    color: white;
+}
+#icon-up{
+    transform:translateX(-50%);
+    top: 20px;
+    left: 50%;
+}
+#icon-down{
+    transform:translateX(-50%);
+    bottom: 20px;
+    left: 50%;
+}
+h2{
+    text-align: right;
+}
+p{
+    text-align:right;
+}
+.sm-active{
+    display: none;
+}
+.border{
+    border: 1px solid white;
+}
